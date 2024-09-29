@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { BASE_URL } from "@/lib/utils";
 import InfoComponent from "@/components/info-anime";
 import Video from "@/components/video";
-import { Badge } from "@/components/ui/badge";
 
 interface PageProps {
   params: {
@@ -53,17 +52,12 @@ const Page: React.FC<PageProps> = ({ params }) => {
     <div className="anime-page-container bg-gray-900 min-h-screen text-white p-4 md:p-8">
       <div className="max-w-4xl mx-auto mt-16">
         <h1 className="text-3xl md:text-4xl font-bold mb-4 text-purple-400">{animeData.info.title}</h1>
-        {/* <Badge variant="outline" className="mb-4 bg-purple-600 text-white">
-          {animeData.info.type}
-        </Badge> */}
         <InfoComponent data={animeData.info} className="mb-8 bg-gray-800 p-4 rounded-lg" />
         <section id="video" className="mt-8">
           <h2 className="text-2xl font-semibold mb-4 text-purple-300">Watch Episode</h2>
-          <Video
-            params={[params.slug]}
-          />
+          {/* Pass the correct video URL to the Video component */}
+          <Video params={[animeData.video.url]} />
         </section>
-        
       </div>
     </div>
   );
