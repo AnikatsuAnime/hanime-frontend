@@ -55,8 +55,7 @@ const Page: React.FC<PageProps> = ({ params }) => {
         <InfoComponent data={animeData.info} className="mb-8 bg-gray-800 p-4 rounded-lg" />
         <section id="video" className="mt-8">
           <h2 className="text-2xl font-semibold mb-4 text-purple-300">Watch Episode</h2>
-          {/* Pass the correct video URL to the Video component */}
-          <Video params={[animeData.video.url]} />
+          <Video params={[animeData.video.url]} /> {/* Pass the video URL to the Video component */}
         </section>
       </div>
     </div>
